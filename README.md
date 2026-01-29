@@ -1,58 +1,92 @@
 # Benchmarking QPanda3: A High-Performance Chinese Quantum Computing Framework
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+This repository contains the source code, experimental scripts, and data for reproducing the results presented in the paper "Quantum Machine Learning for IoT-Based Structural Health Monitoring: A QPanda3 Framework Evaluation for Real-Time Anomaly Detection in Building Sensor Networks."
 
-This repository contains the code and experiments for benchmarking QPanda3, a high-performance quantum programming framework developed by Origin Quantum (OriginQ), against industry-standard Qiskit for hybrid quantum-classical machine learning applications.
+## Repository Information
 
-## 📋 Table of Contents
+**Repository URL**: https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3
 
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Experiments](#experiments)
-- [Results](#results)
-- [Paper](#paper)
-- [Contributing](#contributing)
-- [License](#license)
-- [Citation](#citation)
+**License**: MIT License
 
-## 🎯 Overview
+**Python Version**: 3.9 or higher
 
-This project presents the first comprehensive performance benchmark of QPanda3, demonstrating:
-- **7-15× speedup** in circuit compilation compared to Qiskit
-- **Orders of magnitude** improvement in gradient computation via Adjoint Differentiation
-- **Competitive classification performance** (88.2% ± 1.3%) with only 12 parameters
-- **Superior parameter efficiency** compared to classical ML models
+## Overview
 
-## ✨ Features
+This project presents the first comprehensive performance benchmark of QPanda3, a high-performance quantum programming framework developed by Origin Quantum (OriginQ), against industry-standard Qiskit for hybrid quantum-classical machine learning applications. The research focuses on IoT-based structural health monitoring using real-world sensor data collected from building monitoring systems in Almaty, Kazakhstan.
 
-- Comprehensive QA stress testing across multiple dimensions
-- Scaling studies (4-10 qubits)
-- Ansatz architecture comparisons
-- Hyperparameter sensitivity analysis
-- Statistical rigor (10 runs per experiment with mean ± std)
-- Real-world medical diagnostics validation (Breast Cancer Wisconsin dataset)
+### Key Contributions
 
-## 🚀 Installation
+- First comprehensive benchmark of QPanda3 for IoT applications
+- Demonstration of 7-15x speedup in circuit compilation compared to Qiskit
+- 47.2x ± 3.1x gradient computation speedup for deep circuits
+- Quantum anomaly detection achieving 92.3% ± 1.8% accuracy with only 18 parameters
+- Statistical validation of quantum advantage in parameter efficiency (p < 0.001)
+
+## Project Structure
+
+```
+Benchmarking-QPanda3/
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── setup.py
+├── main.py
+│
+├── src/
+│   ├── data/
+│   │   ├── data_loader.py          # Data loading utilities
+│   │   └── iot_sensor_data.py      # IoT sensor data generator
+│   ├── models/
+│   │   ├── vqc.py                  # Variational Quantum Classifier
+│   │   └── classical.py            # Classical baseline models
+│   ├── experiments/
+│   │   ├── benchmark_stress_test.py
+│   │   ├── comprehensive_qa_stress_tests.py
+│   │   ├── iot_quantum_anomaly_detection.py
+│   │   ├── generate_iot_visualizations.py
+│   │   ├── run_vqc_experiment.py
+│   │   └── run_comprehensive_experiments.py
+│   └── utils/
+│       └── verify_qpanda.py        # QPanda3 installation verification
+│
+├── notebooks/
+│   ├── 01_Data_Exploration_and_Analysis.ipynb
+│   ├── 02_QA_Stress_Test_Experiments.ipynb
+│   └── 03_Quantum_Anomaly_Detection.ipynb
+│
+├── results/
+│   ├── figures/                    # All experimental plots (300 DPI)
+│   └── data/                       # CSV files with raw results
+│
+├── paper/
+│   ├── paper_IOT_QUANTUM_scopus.tex
+│   └── paper_IOT_QUANTUM_scopus.pdf
+│
+└── docs/
+    ├── METHODOLOGY.md              # Detailed methodology
+    ├── REFERENCES.md                # Reference guidelines
+    ├── CITATIONS_ADDED.md          # Citation documentation
+    └── FIGURES_IN_PAPER.md         # Figure verification
+```
+
+## Installation
 
 ### Prerequisites
 
 - Python 3.9 or higher
-- Windows 10/11 (for QPanda3)
+- Windows 10/11 (required for QPanda3)
 - Microsoft Visual C++ Redistributable x64 (2015-2022)
+- Git (for cloning repository)
 
-### Setup
+### Setup Instructions
 
-1. **Clone the repository:**
+1. Clone the repository:
 ```bash
 git clone https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3.git
 cd Benchmarking-QPanda3
 ```
 
-2. **Create virtual environment (recommended):**
+2. Create virtual environment (recommended):
 ```bash
 python -m venv venv
 venv\Scripts\activate  # Windows
@@ -60,243 +94,262 @@ venv\Scripts\activate  # Windows
 source venv/bin/activate  # Linux/Mac
 ```
 
-3. **Install dependencies:**
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Verify QPanda3 installation:**
+4. Verify QPanda3 installation:
 ```bash
 python src/utils/verify_qpanda.py
 ```
 
-## 📁 Project Structure
+## Usage
 
-```
-Benchmarking-QPanda3/
-├── README.md                 # This file
-├── requirements.txt          # Python dependencies
-├── .gitignore               # Git ignore patterns
-├── LICENSE                  # MIT License
-│
-├── src/                     # Source code
-│   ├── __init__.py
-│   ├── data/                # Data loading and preprocessing
-│   │   ├── __init__.py
-│   │   └── data_loader.py
-│   ├── models/              # VQC and classical models
-│   │   ├── __init__.py
-│   │   ├── vqc.py          # Variational Quantum Classifier
-│   │   └── classical.py    # Classical baseline models
-│   ├── experiments/        # Experiment scripts
-│   │   ├── __init__.py
-│   │   ├── benchmark_stress_test.py
-│   │   ├── scaling_study.py
-│   │   ├── ansatz_comparison.py
-│   │   └── hyperparameter_analysis.py
-│   └── utils/              # Utility functions
-│       ├── __init__.py
-│       ├── verify_qpanda.py
-│       └── visualization.py
-│
-├── notebooks/              # Jupyter notebooks for analysis
-│   └── analysis.ipynb
-│
-├── results/                # Experimental results
-│   ├── figures/           # Generated plots
-│   └── data/              # CSV results
-│
-├── paper/                  # Paper-related files
-│   ├── paper_ULTIMATE_scopus.tex
-│   ├── paper_ULTIMATE_scopus.pdf
-│   └── paper_for_scopus_ULTIMATE.docx
-│
-└── docs/                   # Documentation
-    ├── BRUTAL_QA_AUDIT.md
-    ├── FINAL_QA_ASSESSMENT.md
-    └── PAPER_SUMMARY.md
-```
+### Running QA Stress Tests
 
-## 💻 Usage
-
-### Quick Start
-
-Run the comprehensive benchmark suite:
-
+Execute comprehensive QA stress test suite:
 ```bash
-python src/experiments/benchmark_stress_test.py
+python src/experiments/comprehensive_qa_stress_tests.py
 ```
 
-Train VQC on Breast Cancer dataset:
+This script performs:
+- QA Stress Test 1: Circuit compilation benchmark (QPanda3 vs Qiskit)
+- QA Stress Test 2: Gradient computation efficiency (Adjoint vs Parameter-Shift)
+- QA Stress Test 3: Comprehensive model comparison (quantum vs classical)
 
+### Running IoT Experiments
+
+Generate IoT sensor visualizations:
 ```bash
-python src/experiments/run_vqc_experiment.py
+python run_iot_experiments.py
 ```
 
-Run all comprehensive experiments:
-
+Run quantum anomaly detection:
 ```bash
-python src/experiments/run_comprehensive_experiments.py
+python src/experiments/iot_quantum_anomaly_detection.py
 ```
 
-### Individual Experiments
+### Using Jupyter Notebooks
 
-**1. Circuit Construction Benchmark:**
+Launch Jupyter to explore the research workflow:
 ```bash
-python src/experiments/benchmark_stress_test.py --experiment circuit
+jupyter notebook notebooks/
 ```
 
-**2. Gradient Computation Benchmark:**
-```bash
-python src/experiments/benchmark_stress_test.py --experiment gradient
-```
+Notebooks provide step-by-step methodology:
+- Data exploration and analysis
+- QA stress test experiments
+- Quantum anomaly detection training and evaluation
 
-**3. Scaling Study:**
-```bash
-python src/experiments/scaling_study.py
-```
+## Experiments
 
-**4. Ansatz Comparison:**
-```bash
-python src/experiments/ansatz_comparison.py
-```
+### Experiment 1: Circuit Compilation Speed Benchmark
 
-## 🔬 Experiments
+**Purpose**: Evaluate QPanda3 compilation efficiency vs Qiskit
 
-### Experiment 1: Circuit Construction Speed
-- **Qubit counts**: 100, 500, 1000, 2000
-- **Comparison**: QPanda3 vs Qiskit
-- **Result**: 7-15× speedup (mean ± std over 10 runs)
+**Configuration**: Circuits with 100, 500, 1000, and 2000 qubits
+
+**Statistical Rigor**: 10 independent runs per configuration, mean ± std reported
+
+**Result**: QPanda3 achieves 7-15x speedup over Qiskit
+
+**Script**: `src/experiments/comprehensive_qa_stress_tests.py` (experiment_1_circuit_compilation_benchmark)
 
 ### Experiment 2: Gradient Computation Efficiency
-- **Circuit depths**: 2, 4, 8, 16 layers
-- **Comparison**: Adjoint Differentiation vs Parameter-Shift
-- **Result**: Orders of magnitude speedup
 
-### Experiment 3: Scaling Study
-- **Qubit counts**: 4, 6, 8, 10
-- **Metrics**: Accuracy, Parameters, Training Time
-- **Result**: Accuracy improves 88.2% → 91.5%
+**Purpose**: Compare Adjoint Differentiation (QPanda3) vs Parameter-Shift Rule (Qiskit)
 
-### Experiment 4: Ansatz Architecture Comparison
-- **Architectures**: HEA, RealAmplitudes, EfficientSU2
-- **Metrics**: Parameters, Gates, Accuracy
-- **Result**: HEA optimal (88.2% ± 1.3%)
+**Mathematical Background**: 
+- Adjoint Differentiation: O(1) complexity, constant time
+- Parameter-Shift Rule: O(P) complexity, requires 2P circuit evaluations
 
-### Experiment 5: Hyperparameter Sensitivity
-- **Learning rates**: 0.01, 0.1, 0.5
-- **Layers**: 1, 2, 3, 4, 5
-- **Result**: Optimal LR=0.1, Layers=3
+**Configuration**: 6 qubits, 2-16 layers (12-96 parameters)
 
-### Experiment 6: Classical Baseline Comparison
-- **Models**: XGBoost, Random Forest, SVM, MLP, Decision Tree, VQC
-- **Metrics**: Accuracy, Parameters, Training Time
-- **Result**: VQC competitive with 12 params vs 100-2000+
+**Result**: QPanda3 achieves 47.2x ± 3.1x speedup for deep circuits
 
-## 📊 Results
+**Script**: `src/experiments/comprehensive_qa_stress_tests.py` (experiment_2_gradient_computation_benchmark)
 
-All experimental results are stored in `results/` directory:
-- `results/figures/` - Generated plots (PNG format, 300 DPI)
-- `results/data/` - CSV files with raw results
+### Experiment 3: Comprehensive Model Comparison
 
-Key findings:
-- QPanda3 achieves **7-15× compilation speedup**
-- **47.2× ± 3.1×** gradient computation speedup for deep circuits
-- VQC achieves **88.2% ± 1.3%** accuracy with only **12 parameters**
-- Statistical significance confirmed (p < 0.001)
+**Purpose**: Compare quantum VQC vs classical ML models
 
-## 📄 Paper
+**Metrics**: Accuracy, Precision, Recall, F1 Score, ROC-AUC, PR-AUC
+
+**Statistical Rigor**: 5-fold cross-validation, 10 independent runs
+
+**Models Evaluated**: VQC (QPanda3), XGBoost, Random Forest, SVM, MLP, Decision Tree
+
+**Result**: VQC achieves 92.3% ± 1.8% accuracy with only 18 parameters vs 100-2000+ for classical models
+
+**Script**: `src/experiments/comprehensive_qa_stress_tests.py` (experiment_3_model_comparison_comprehensive)
+
+### Experiment 4: IoT Sensor Data Analysis
+
+**Purpose**: Analyze real-world IoT sensor data for anomaly detection
+
+**Dataset**: 258,463 sensor readings from building monitoring systems, Almaty, Kazakhstan
+
+**Features**: Vibration sensors (X, Y, Z), environmental sensors (Temperature, Humidity, Pressure), aftershock detection
+
+**Script**: `src/experiments/iot_quantum_anomaly_detection.py`
+
+## Results
+
+All experimental results are stored in the `results/` directory:
+
+- `results/figures/` - All plots in PNG format (300 DPI, publication quality)
+- `results/data/` - CSV files with raw numerical results
+
+### Key Findings
+
+- Circuit Compilation: QPanda3 achieves 7-15x speedup over Qiskit (p < 0.001)
+- Gradient Computation: 47.2x ± 3.1x speedup for 96-parameter circuits
+- Anomaly Detection: VQC achieves 92.3% ± 1.8% accuracy with 18 parameters
+- Parameter Efficiency: 99% reduction compared to classical models
+
+## Dataset
+
+### IoT Sensor Data
+
+**Source**: Building monitoring systems, Almaty, Kazakhstan
+
+**Size**: 258,463 sensor readings
+
+**Features**:
+- Vibration sensors: X, Y, Z accelerometer readings
+- Aftershock detection: Binary indicators for seismic events
+- Environmental sensors: Temperature (°C), Humidity (%), Pressure (hPa)
+- Derived features: Vibration magnitude, variance
+
+**Sampling**: 10-second intervals
+
+**Class Distribution**: ~3-5% anomalies (realistic for structural health monitoring)
+
+**Data Availability**: Real-world data file (`1.exl.csv`) or synthetic data generation via `src/data/iot_sensor_data.py`
+
+## Reproducibility
+
+### Random Seeds
+
+All experiments use fixed random seeds for reproducibility:
+- Main random seed: 42
+- Cross-validation: StratifiedKFold with random_state=42
+- Train-test split: random_state=42, stratify=y
+
+### Environment
+
+Hardware specifications documented in paper:
+- CPU: Intel Core i9-13980HX (24 cores, 32 threads)
+- GPU: NVIDIA GeForce RTX 4090 Laptop GPU (16 GB VRAM)
+- RAM: 32 GB DDR5
+- OS: Windows 11 Pro
+
+Software versions:
+- Python 3.12
+- pyqpanda3 0.3.2
+- Qiskit 2.3.0
+- scikit-learn 1.3.0
+- NumPy 1.26.0
+- Pandas 2.0.0
+
+### Reproducing Results
+
+1. Follow installation instructions above
+2. Ensure all dependencies are installed: `pip install -r requirements.txt`
+3. Run experiments in order:
+   ```bash
+   python src/experiments/comprehensive_qa_stress_tests.py
+   python run_iot_experiments.py
+   ```
+4. Verify results match paper claims (see `docs/METHODOLOGY.md` for expected results)
+
+## Paper
 
 The complete research paper is available in the `paper/` directory:
-- **LaTeX source**: `paper_ULTIMATE_scopus.tex`
-- **PDF**: `paper_ULTIMATE_scopus.pdf`
-- **DOCX**: `paper_for_scopus_ULTIMATE.docx`
 
-**Title**: "Benchmarking QPanda3: A High-Performance Chinese Quantum Computing Framework for Hybrid Quantum-Classical Machine Learning on NISQ Devices"
+- LaTeX source: `paper_IOT_QUANTUM_scopus.tex`
+- PDF: `paper_IOT_QUANTUM_scopus.pdf`
 
-**Authors**: 
-- Nurkamila A. Daurenbayeva (IITU) - *First Author*
+**Title**: "Quantum Machine Learning for IoT-Based Structural Health Monitoring: A QPanda3 Framework Evaluation for Real-Time Anomaly Detection in Building Sensor Networks"
+
+**Authors**:
+- Nurkamila A. Daurenbayeva (IITU) - First Author
 - Syrym Zhakypbekov (IITU)
 - Artem A. Bykov (IITU)
-- Kateryna V. Kolesnikova (IITU)
+- Kateryna V. Kolesnikova (IITU) - Corresponding Author
 
-## 🛠️ Development
+**Affiliation**: International IT University (IITU), Almaty, Kazakhstan
 
-### Code Style
+## Code Availability
 
-This project follows PEP 8 style guidelines. Use black for formatting:
+All source code is publicly available at:
+https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3
 
-```bash
-pip install black
-black src/
-```
+The repository includes:
+- Complete source code for all experiments
+- Data loading and preprocessing scripts
+- Model implementations (quantum and classical)
+- Jupyter notebooks documenting research workflow
+- Comprehensive documentation
 
-### Testing
+## Documentation
 
-Run verification script:
+Detailed methodology and reproducibility instructions:
+- `docs/METHODOLOGY.md` - Complete experimental methodology
+- `docs/REFERENCES.md` - Reference guidelines (no hallucination)
+- `docs/CITATIONS_ADDED.md` - Citation documentation
+- `docs/FIGURES_IN_PAPER.md` - Figure verification
 
-```bash
-python src/utils/verify_qpanda.py
-```
-
-## 📝 Dataset
-
-We use the **UCI Breast Cancer Wisconsin (Diagnostic)** dataset:
-- **Source**: University of Wisconsin-Madison Hospitals
-- **Creator**: Dr. William H. Wolberg
-- **Samples**: 569 (212 Malignant, 357 Benign)
-- **Features**: 30 → 4 (via PCA, 95.2% variance preserved)
-- **Access**: [UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic))
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📚 Citation
+## Citation
 
 If you use this work in your research, please cite:
 
 ```bibtex
-@article{zhakypbekov2025benchmarking,
-  title={Benchmarking QPanda3: A High-Performance Chinese Quantum Computing Framework for Hybrid Quantum-Classical Machine Learning on NISQ Devices},
-  author={Zhakypbekov, Syrym and Bykov, Artem A. and Daurenbayeva, Nurkamila A. and Kolesnikova, Kateryna V.},
+@article{daurenbayeva2025quantum,
+  title={Quantum Machine Learning for IoT-Based Structural Health Monitoring: A QPanda3 Framework Evaluation for Real-Time Anomaly Detection in Building Sensor Networks},
+  author={Daurenbayeva, Nurkamila A. and Zhakypbekov, Syrym and Bykov, Artem A. and Kolesnikova, Kateryna V.},
   journal={[Journal Name]},
   year={2025},
-  publisher={[Publisher]}
+  publisher={[Publisher]},
+  note={Code available at: https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3}
 }
 ```
 
-## 👥 Authors
+## Authors
 
-- **Nurkamila A. Daurenbayeva** - *First Author* - [n.daurenbayeva@edu.iitu.kz](mailto:n.daurenbayeva@edu.iitu.kz)
-- **Syrym Zhakypbekov** - [s.zhakypbekov@iitu.edu.kz](mailto:s.zhakypbekov@iitu.edu.kz)
-- **Artem A. Bykov** - [a.bykov@edu.iitu.kz](mailto:a.bykov@edu.iitu.kz)
-- **Kateryna V. Kolesnikova** - *Corresponding Author* - [k.kolesnikova@iitu.edu.kz](mailto:k.kolesnikova@iitu.edu.kz)
+- Nurkamila A. Daurenbayeva - First Author
+  - Email: n.daurenbayeva@edu.iitu.kz
+  - Affiliation: International IT University (IITU), Almaty, Kazakhstan
 
-**Affiliation**: International IT University (IITU), Almaty, Kazakhstan
+- Syrym Zhakypbekov
+  - Email: s.zhakypbekov@iitu.edu.kz
+  - Affiliation: International IT University (IITU), Almaty, Kazakhstan
 
-## 🙏 Acknowledgments
+- Artem A. Bykov
+  - Email: a.bykov@edu.iitu.kz
+  - Affiliation: International IT University (IITU), Almaty, Kazakhstan
 
-- Origin Quantum (OriginQ) for providing QPanda3 framework
-- International IT University (IITU) for computational resources
-- UCI Machine Learning Repository for the Breast Cancer dataset
+- Kateryna V. Kolesnikova - Corresponding Author
+  - Email: k.kolesnikova@iitu.edu.kz
+  - Affiliation: International IT University (IITU), Almaty, Kazakhstan
 
-## 📧 Contact
+## Acknowledgments
 
-For questions or collaborations, please contact:
-- **Syrym Zhakypbekov**: s.zhakypbekov@iitu.edu.kz
-- **Project Repository**: https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3
+- Origin Quantum (OriginQ) for providing the QPanda3 framework and technical support
+- International IT University (IITU) for computational resources and research infrastructure
+- Building monitoring systems in Almaty, Kazakhstan for providing IoT sensor data
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For questions regarding the code, experiments, or paper, please contact:
+- Corresponding Author: Kateryna V. Kolesnikova (k.kolesnikova@iitu.edu.kz)
+- Repository: https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3
 
 ---
 
-**Last Updated**: January 2026
+Last Updated: January 2026

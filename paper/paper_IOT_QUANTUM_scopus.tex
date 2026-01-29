@@ -279,6 +279,26 @@ The deployment of quantum machine learning for IoT-based SHM represents a signif
 
 This research was conducted at the International IT University (IITU), Almaty, Kazakhstan. We acknowledge Origin Quantum (OriginQ) for providing the QPanda3 framework and technical support. We thank the IITU research infrastructure for computational resources.
 
+\section*{Data and Code Availability}
+
+All source code, experimental scripts, and data necessary to reproduce the results presented in this paper are publicly available at:
+
+\texttt{https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3}
+
+The repository includes:
+\begin{itemize}
+    \item Complete source code for all experiments (Python 3.12)
+    \item Data loading and preprocessing scripts
+    \item Model implementations (quantum VQC and classical baselines)
+    \item Jupyter notebooks documenting the complete research workflow
+    \item All experimental results (figures and CSV data files)
+    \item Comprehensive documentation and reproducibility instructions
+\end{itemize}
+
+IoT sensor data used in this study is available in the repository (`1.exl.csv`) or can be generated synthetically using the provided data generation script (`src/data/iot_sensor_data.py`) for full reproducibility. All experiments use fixed random seeds (random\_state=42) to ensure reproducibility.
+
+For detailed methodology and step-by-step reproduction instructions, see the repository documentation (`docs/METHODOLOGY.md`).
+
 \begin{thebibliography}{99}
 
 \bibitem{daurenbayeva2023thermostats}
