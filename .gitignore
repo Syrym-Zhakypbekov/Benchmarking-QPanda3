@@ -81,13 +81,25 @@ checkpoints/
 Thumbs.db
 .DS_Store
 
-# Project specific
+# Project specific - temporary/helper files
 notepad.txt
 docs.txt
 1.exl.csv
 synthetic_quantum_data.csv
 
-# Keep only final versions
+# Temporary DOCX generation scripts (not needed in repo)
+create_enhanced_docx.py
+create_professional_docx.py
+create_ultimate_scopus_docx.py
+generate_synth_data.py
+verify_qpanda.py
+
+# Temporary instruction/summary files
+GIT_UPLOAD_INSTRUCTIONS.md
+PROJECT_CLEANUP_SUMMARY.md
+PUSH_TO_GITHUB.md
+
+# Old/draft paper versions (keep only ULTIMATE)
 paper.pdf
 paper.tex
 paper_for_scopus.docx
@@ -100,7 +112,7 @@ experiment_plan.md
 final_expansion_plan.md
 SCOPUS_AUDIT_REPORT.md
 
-# Keep only ULTIMATE versions
-!paper_for_scopus_ULTIMATE.docx
-!paper_ULTIMATE_scopus.pdf
-!paper_ULTIMATE_scopus.tex
+# Keep only ULTIMATE versions in paper/ directory
+!paper/paper_for_scopus_ULTIMATE.docx
+!paper/paper_ULTIMATE_scopus.pdf
+!paper/paper_ULTIMATE_scopus.tex
