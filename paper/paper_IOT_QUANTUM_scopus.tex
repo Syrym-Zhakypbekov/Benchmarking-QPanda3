@@ -163,7 +163,14 @@ Figure~\ref{fig:gradient} shows gradient computation time for deep circuits. QPa
 
 \subsection{Anomaly Detection Performance}
 
-Table~\ref{tab:results} summarizes anomaly detection results on IoT sensor data. Quantum VQC achieves 92.3\% ± 1.8\% accuracy with only 18 parameters (6 qubits, 3 layers), compared to classical models requiring 100-2000+ parameters. Statistical significance testing confirms quantum advantage (p $<$ 0.001).
+Table~\ref{tab:results} summarizes anomaly detection results on IoT sensor data. Quantum VQC achieves 92.3\% ± 1.8\% accuracy with only 18 parameters (6 qubits, 3 layers), compared to classical models requiring 100-2000+ parameters. Statistical significance testing confirms quantum advantage (p $<$ 0.001). Figure~\ref{fig:model_comparison} provides a comprehensive comparison of quantum vs classical models across multiple metrics, demonstrating the parameter efficiency advantage of quantum approaches.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{../results/figures/model_comparison.png}
+\caption{Comprehensive model comparison: Quantum VQC vs Classical ML models. Left: Accuracy comparison. Right: Parameter efficiency analysis.}
+\label{fig:model_comparison}
+\end{figure}
 
 \begin{table}[!t]
 \centering
@@ -224,6 +231,28 @@ Figure~\ref{fig:iot_correlation} presents the feature correlation matrix, reveal
 \includegraphics[width=0.48\textwidth]{../results/figures/iot_correlation_heatmap.png}
 \caption{Feature correlation matrix for IoT sensor data, showing relationships between vibration components (X, Y, Z) and environmental sensors (Temperature, Humidity, Pressure).}
 \label{fig:iot_correlation}
+\end{figure}
+
+\subsection{Feature Distribution Analysis}
+
+Figure~\ref{fig:iot_features} shows the distribution of key features for normal vs anomalous sensor readings. The clear separation between distributions validates the discriminative power of vibration magnitude and environmental features for anomaly detection.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{../results/figures/iot_feature_distributions.png}
+\caption{Feature distribution analysis: Comparison of normal vs anomalous sensor readings across X, Y, Z vibration components and environmental sensors.}
+\label{fig:iot_features}
+\end{figure}
+
+\subsection{Aftershock Event Analysis}
+
+Figure~\ref{fig:aftershock} analyzes aftershock events in the IoT sensor data, demonstrating their correlation with anomalous vibration patterns. This analysis informs our anomaly detection strategy by identifying seismic events as a key indicator of structural anomalies.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{../results/figures/iot_aftershock_analysis.png}
+\caption{Aftershock event analysis: Timeline, magnitude comparison, and correlation with anomaly detection.}
+\label{fig:aftershock}
 \end{figure}
 
 \section{Discussion}
