@@ -63,10 +63,10 @@ Benchmarking-QPanda3/
 │   └── paper_IOT_QUANTUM_scopus.pdf
 │
 └── docs/
-    ├── METHODOLOGY.md              # Detailed methodology
-    ├── REFERENCES.md                # Reference guidelines
-    ├── CITATIONS_ADDED.md          # Citation documentation
-    └── FIGURES_IN_PAPER.md         # Figure verification
+    ├── METHODOLOGY.md              # Detailed experimental methodology
+    ├── REPRODUCIBILITY.md         # Complete reproducibility guide
+    ├── CITATIONS_ADDED.md         # Citation documentation
+    └── FIGURES_IN_PAPER.md        # Figure verification
 ```
 
 ## Installation
