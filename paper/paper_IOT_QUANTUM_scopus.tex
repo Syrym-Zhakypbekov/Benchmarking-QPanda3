@@ -11,6 +11,8 @@
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{url}
+\urlstyle{same}
+\def\UrlBreaks{\do\/\do-\do.\do?\do&\do=\do\#\do+}
 
 \begin{document}
 
@@ -283,7 +285,7 @@ This research was conducted at the International IT University (IITU), Almaty, K
 
 All source code, experimental scripts, and data necessary to reproduce the results presented in this paper are publicly available at:
 
-\texttt{https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3}
+\url{https://github.com/Syrym-Zhakypbekov/Benchmarking-QPanda3}
 
 The repository includes:
 \begin{itemize}
@@ -295,9 +297,9 @@ The repository includes:
     \item Comprehensive documentation and reproducibility instructions
 \end{itemize}
 
-IoT sensor data used in this study is available in the repository (`1.exl.csv`) or can be generated synthetically using the provided data generation script (`src/data/iot_sensor_data.py`) for full reproducibility. All experiments use fixed random seeds (random\_state=42) to ensure reproducibility.
+IoT sensor data used in this study is available in the repository (\path{1.exl.csv}) or can be generated synthetically using the provided data generation script (\path{src/data/iot_sensor_data.py}) for full reproducibility. All experiments use fixed random seeds (\texttt{random\_state=42}) to ensure reproducibility.
 
-For detailed methodology and step-by-step reproduction instructions, see the repository documentation (`docs/METHODOLOGY.md`).
+For detailed methodology and step-by-step reproduction instructions, see the repository documentation (\path{docs/METHODOLOGY.md}).
 
 \begin{thebibliography}{99}
 
@@ -344,7 +346,7 @@ J. R. McClean, S. Boixo, V. N. Smelyanskiy, R. Babbush, and H. Neven, ``Barren p
 A. Acín et al., ``The quantum technologies roadmap: a European community view,'' \textit{New Journal of Physics}, vol. 20, no. 8, p. 080201, 2018, doi: 10.1088/1367-2630/aad1ea.
 
 \bibitem{qpanda3_docs}
-Origin Quantum, ``QPanda3 Documentation,'' \textit{https://qpanda-tutorial.readthedocs.io/}, 2024. [Online]. Available: https://qpanda-tutorial.readthedocs.io/
+Origin Quantum, ``QPanda3 Documentation,'' 2024. [Online]. Available: \url{https://qpanda-tutorial.readthedocs.io/}
 
 \bibitem{wsn_shm}
 J. P. Lynch and K. J. Loh, ``A summary review of wireless sensors and sensor networks for structural health monitoring,'' \textit{The Shock and Vibration Digest}, vol. 38, no. 2, pp. 91--128, 2006, doi: 10.1177/0583102406061499.
@@ -359,7 +361,7 @@ S. Lloyd, M. Mohseni, and P. Rebentrost, ``Quantum algorithms for supervised and
 K. Mitarai, M. Negoro, M. Kitagawa, and K. Fujii, ``Quantum circuit learning,'' \textit{Physical Review A}, vol. 98, no. 3, p. 032309, 2018, doi: 10.1103/PhysRevA.98.032309.
 
 \bibitem{qiskit_benchmark}
-H. Abraham et al., ``Qiskit: An open-source framework for quantum computing,'' 2019. [Online]. Available: https://qiskit.org/
+H. Abraham et al., ``Qiskit: An open-source framework for quantum computing,'' 2019. [Online]. Available: \url{https://qiskit.org/}
 
 \bibitem{chinese_quantum_computing}
 J. Zhang et al., ``Observation of a many-body dynamical phase transition with a 53-qubit quantum simulator,'' \textit{Nature}, vol. 551, no. 7682, pp. 601--604, 2017, doi: 10.1038/nature24654.
