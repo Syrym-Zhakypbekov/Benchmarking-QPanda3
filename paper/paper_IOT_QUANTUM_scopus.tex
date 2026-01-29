@@ -145,7 +145,7 @@ Figure~\ref{fig:compilation} demonstrates QPanda3's superior compilation speed c
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.48\textwidth]{results/figures/benchmark_circuit_construction.png}
+\includegraphics[width=0.48\textwidth]{../results/figures/benchmark_circuit_construction.png}
 \caption{Circuit compilation speed comparison: QPanda3 vs Qiskit. Error bars represent standard deviation over 10 runs.}
 \label{fig:compilation}
 \end{figure}
@@ -156,7 +156,7 @@ Figure~\ref{fig:gradient} shows gradient computation time for deep circuits. QPa
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.48\textwidth]{results/figures/benchmark_gradient.png}
+\includegraphics[width=0.48\textwidth]{../results/figures/benchmark_gradient.png}
 \caption{Gradient computation time: QPanda3 Adjoint Differentiation vs Qiskit Parameter-Shift Rule.}
 \label{fig:gradient}
 \end{figure}
@@ -188,7 +188,7 @@ Figure~\ref{fig:scaling} demonstrates performance scaling with qubit count. Accu
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.48\textwidth]{results/figures/scaling_study.png}
+\includegraphics[width=0.48\textwidth]{../results/figures/scaling_study.png}
 \caption{Performance scaling with qubit count. Error bars represent standard deviation over 10 runs.}
 \label{fig:scaling}
 \end{figure}
@@ -199,9 +199,31 @@ Figure~\ref{fig:iot_viz} presents comprehensive visualization of IoT sensor data
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.48\textwidth]{results/figures/iot_anomaly_detection_analysis.png}
+\includegraphics[width=0.48\textwidth]{../results/figures/iot_anomaly_detection_analysis.png}
 \caption{Comprehensive IoT sensor data analysis: anomaly distribution, vibration patterns, and feature analysis.}
 \label{fig:iot_viz}
+\end{figure}
+
+\subsection{Time-Series Analysis}
+
+Figure~\ref{fig:iot_timeseries} shows time-series analysis of vibration patterns, demonstrating how anomalies manifest as spikes in sensor readings. The time-series visualization reveals temporal patterns in sensor data, with anomalies clearly visible as deviations from normal vibration baselines.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{../results/figures/iot_time_series_analysis.png}
+\caption{Time-series analysis of IoT sensor data: X, Y vibration components and temperature readings with anomaly detection. Red markers indicate detected anomalies.}
+\label{fig:iot_timeseries}
+\end{figure}
+
+\subsection{Feature Correlation Analysis}
+
+Figure~\ref{fig:iot_correlation} presents the feature correlation matrix, revealing strong correlations between vibration components that inform our quantum encoding strategy. Understanding these correlations enables effective dimensionality reduction via PCA while preserving discriminative information.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{../results/figures/iot_correlation_heatmap.png}
+\caption{Feature correlation matrix for IoT sensor data, showing relationships between vibration components (X, Y, Z) and environmental sensors (Temperature, Humidity, Pressure).}
+\label{fig:iot_correlation}
 \end{figure}
 
 \section{Discussion}
