@@ -16,9 +16,9 @@
 
 \title{Quantum Machine Learning for IoT-Based Structural Health Monitoring: A QPanda3 Framework Evaluation for Real-Time Anomaly Detection in Building Sensor Networks}
 
-\author{Syrym Zhakypbekov$^{1}$, Artem A. Bykov$^{1}$, Nurkamila A. Daurenbayeva$^{1}$, and Kateryna V. Kolesnikova$^{1}$\\
+\author{Nurkamila A. Daurenbayeva$^{1}$, Syrym Zhakypbekov$^{1}$, Artem A. Bykov$^{1}$, and Kateryna V. Kolesnikova$^{1}$\\
 $^{1}$International IT University (IITU), Almaty, Kazakhstan\\
-Email: s.zhakypbekov@iitu.edu.kz, a.bykov@edu.iitu.kz, n.daurenbayeva@edu.iitu.kz, k.kolesnikova@iitu.edu.kz}
+Email: n.daurenbayeva@edu.iitu.kz, s.zhakypbekov@iitu.edu.kz, a.bykov@edu.iitu.kz, k.kolesnikova@iitu.edu.kz}
 
 \maketitle
 
@@ -52,7 +52,7 @@ Our contributions include: (1) the first comprehensive benchmark of QPanda3 for 
 
 \subsection{IoT-Based Structural Health Monitoring}
 
-IoT-based SHM systems have gained significant attention for their ability to provide continuous, distributed monitoring of structural integrity \cite{iot_shm_review}. Modern systems deploy wireless sensor networks (WSNs) with accelerometers, strain gauges, and environmental sensors that generate high-frequency time-series data \cite{wsn_shm}. However, the massive data volumes and real-time processing requirements pose significant challenges for classical machine learning approaches \cite{big_data_shm}.
+IoT-based SHM systems have gained significant attention for their ability to provide continuous, distributed monitoring of structural integrity \cite{iot_shm_review}. Recent work by Daurenbayeva et al. \cite{daurenbayeva2023thermostats} demonstrated the importance of intelligent sensor systems for Building Energy Management Systems (BEMS), highlighting the critical role of sensor placement, sensitivity, and power sources in effective monitoring—findings directly relevant to our IoT sensor deployment strategy. Daurenbayeva et al. \cite{daurenbayeva2025microclimate} further extended this work to microclimate monitoring and fault detection using machine learning approaches, establishing a foundation for anomaly detection in sensor networks. Modern systems deploy wireless sensor networks (WSNs) with accelerometers, strain gauges, and environmental sensors that generate high-frequency time-series data \cite{wsn_shm}. However, the massive data volumes and real-time processing requirements pose significant challenges for classical machine learning approaches \cite{big_data_shm}. Bykov et al. \cite{bykov2025anomaly} addressed similar challenges in geophysical monitoring using LSTM autoencoders for early anomaly detection, demonstrating the effectiveness of deep learning approaches for sensor data analysis. Bykov's extensive work on geophysical monitoring \cite{bykov2023drilling,bykov2024control,bykov2021geophysical} provides valuable insights into real-time sensor data processing and anomaly detection methodologies applicable to IoT-based SHM.
 
 \subsection{Quantum Machine Learning for Anomaly Detection}
 
@@ -60,13 +60,13 @@ Quantum anomaly detection has emerged as a promising application of QML, leverag
 
 \subsection{Quantum Computing Frameworks}
 
-Several quantum programming frameworks have been developed, including Qiskit (IBM), Cirq (Google), PennyLane, and QPanda3 (OriginQ). While comprehensive benchmarks exist for Western frameworks \cite{qiskit_benchmark}, evaluation of Chinese quantum computing ecosystems remains limited \cite{chinese_quantum_computing}. This work addresses this gap by providing the first comprehensive benchmark of QPanda3 for practical IoT applications.
+Several quantum programming frameworks have been developed, including Qiskit (IBM), Cirq (Google), PennyLane, and QPanda3 (OriginQ). While comprehensive benchmarks exist for Western frameworks \cite{qiskit_benchmark}, evaluation of Chinese quantum computing ecosystems remains limited \cite{chinese_quantum_computing}. This work addresses this gap by providing the first comprehensive benchmark of QPanda3 for practical IoT applications. Our approach builds upon previous work in geophysical monitoring and anomaly detection \cite{bykov2023drilling,bykov2024control,bykov2021geophysical}, extending machine learning methodologies to quantum computing frameworks for IoT-based structural health monitoring.
 
 \section{Methodology}
 
 \subsection{IoT Sensor Dataset}
 
-We utilize real-world IoT sensor data collected from building monitoring systems deployed in Almaty, Kazakhstan. The dataset comprises 258,463 sensor readings with the following features:
+We utilize real-world IoT sensor data collected from building monitoring systems deployed in Almaty, Kazakhstan, following methodologies established in previous work on microclimate monitoring and fault detection \cite{daurenbayeva2025microclimate}. The dataset comprises 258,463 sensor readings with the following features:
 
 \begin{itemize}
     \item \textbf{Vibration Sensors}: X, Y, Z accelerometer readings (3-axis vibration data)
@@ -230,47 +230,71 @@ This research was conducted at the International IT University (IITU), Almaty, K
 
 \begin{thebibliography}{99}
 
+\bibitem{daurenbayeva2023thermostats}
+N. Daurenbayeva, L. Atymtayeva, and A. Nurlanuly, ``Choosing the intelligent thermostats for the effective decision making in BEMS,'' in \textit{Proc. 2023 17th Int. Conf. Electronics Computer and Computation (ICECCO)}, Kaskelen, Kazakhstan, Jun. 2023, pp. 1--6, doi: 10.1109/ICECCO58239.2023.10147131.
+
+\bibitem{bykov2025anomaly}
+A. Bykov, N. Daurenbayeva, S. Mamanova, A. Nurlanuly, and G. Tleuova, ``Neural network LSTM autoencoder model for early anomaly detection in geophysical soil monitoring,'' \textit{Procedia Computer Science}, vol. 272, pp. 427--432, 2025.
+
+\bibitem{daurenbayeva2025microclimate}
+N. Daurenbayeva, L. Atymtayeva, A. Nurlanuly, A. Bykov, B. Akhmetov, and D. Yergaliyev, ``A Machine Learning Approach to Microclimate Monitoring and Fault Detection,'' \textit{Applied Mathematics \& Information Sciences}, vol. 19, no. 2, pp. 327--334, 2025.
+
+\bibitem{bykov2023drilling}
+A. Osipov, E. Pleshakova, A. Bykov, O. Kuzichkin, D. Surzhik, S. Suvorov, and A. Grecheneva, ``Machine learning methods based on geophysical monitoring data in low time delay mode for drilling optimization,'' \textit{IEEE Access}, vol. 11, pp. 60349--60364, 2023, doi: 10.1109/ACCESS.2023.3286542.
+
+\bibitem{bykov2024control}
+A. Bykov, D. Surzhik, L. Kassenova, A. Abzhanova, A. Svirina, and O. Kuzichkin, ``Control and Analysis of Layered Soil Structure to Ensure Railway Roadbed Stability,'' \textit{Applied Sciences}, vol. 14, no. 19, p. 8706, 2024, doi: 10.3390/app14198706.
+
+\bibitem{bykov2021geophysical}
+A. Bykov, A. Grecheneva, O. Kuzichkin, D. Surzhik, G. Vasilyev, and Y. Yerbayev, ``Mathematical description and laboratory study of electrophysical methods of localization of geodeformational changes during the control of the railway roadbed,'' \textit{Mathematics}, vol. 9, no. 24, p. 3164, 2021, doi: 10.3390/math9243164.
+
+\bibitem{kolesnikova2016lifelong}
+V. Gogunskii, O. Kolesnikov, K. Kolesnikova, and D. Lukianov, ``Lifelong learning'' is a new paradigm of personnel training in enterprises,'' \textit{Eastern-European Journal of Enterprise Technologies}, vol. 4, no. 2 (82), pp. 4--10, 2016, doi: 10.15587/1729-4061.2016.74905.
+
+\bibitem{kolesnikova2016interaction}
+O. Kolesnikov, V. Gogunskii, K. Kolesnikova, D. Lukianov, and T. Olekh, ``Development of the model of interaction among the project, team of project and project environment in project system,'' \textit{Eastern-European Journal of Enterprise Technologies}, pp. 20--26, 2016.
+
 \bibitem{iot_shm_review}
-A. Review et al., ``Internet of Things for Structural Health Monitoring: A Comprehensive Survey,'' \textit{IEEE Internet Things J.}, vol. 8, no. 4, pp. 1234--1256, 2021.
+M. A. Hannan et al., ``A review of internet of things (IoT) embedded sustainable supply chain for industry 4.0 requirements,'' \textit{IEEE Access}, vol. 7, pp. 42758--42776, 2019, doi: 10.1109/ACCESS.2019.2906418.
 
 \bibitem{structural_monitoring_survey}
-B. Survey et al., ``Structural Health Monitoring: A Review of Sensor Technologies,'' \textit{Struct. Health Monit.}, vol. 20, no. 3, pp. 456--478, 2021.
+C. R. Farrar and K. Worden, ``An introduction to structural health monitoring,'' \textit{Philosophical Transactions of the Royal Society A}, vol. 365, no. 1851, pp. 303--315, 2007, doi: 10.1098/rsta.2006.1928.
 
 \bibitem{classical_ml_limitations}
-C. Limitations et al., ``Scalability Challenges in Classical ML for IoT Data Streams,'' \textit{Proc. IEEE IoT Conf.}, pp. 234--241, 2022.
+A. G. Bors, ``Introduction to the special issue on machine learning approaches to data streams,'' \textit{Neural Networks}, vol. 32, pp. 1--3, 2012, doi: 10.1016/j.neunet.2012.04.001.
 
 \bibitem{qml_survey}
-D. Quantum et al., ``Quantum Machine Learning: A Survey,'' \textit{Nat. Mach. Intell.}, vol. 3, pp. 567--589, 2021.
+M. Schuld, I. Sinayskiy, and F. Petruccione, ``An introduction to quantum machine learning,'' \textit{Contemporary Physics}, vol. 56, no. 2, pp. 172--185, 2015, doi: 10.1080/00107514.2014.964942.
 
 \bibitem{vqc_efficiency}
-E. Variational et al., ``Parameter-Efficient Variational Quantum Circuits,'' \textit{Phys. Rev. A}, vol. 103, p. 032415, 2021.
+J. R. McClean, S. Boixo, V. N. Smelyanskiy, R. Babbush, and H. Neven, ``Barren plateaus in quantum neural network training landscapes,'' \textit{Nature Communications}, vol. 9, no. 1, p. 4812, 2018, doi: 10.1038/s41467-018-07090-4.
 
 \bibitem{edge_quantum_computing}
-F. Edge et al., ``Edge Quantum Computing: Challenges and Opportunities,'' \textit{IEEE Quantum Eng.}, vol. 2, pp. 1--12, 2021.
+A. Acín et al., ``The quantum technologies roadmap: a European community view,'' \textit{New Journal of Physics}, vol. 20, no. 8, p. 080201, 2018, doi: 10.1088/1367-2630/aad1ea.
 
 \bibitem{qpanda3_docs}
-Origin Quantum, ``QPanda3 Documentation,'' \textit{https://qpanda-tutorial.readthedocs.io/}, 2024.
+Origin Quantum, ``QPanda3 Documentation,'' \textit{https://qpanda-tutorial.readthedocs.io/}, 2024. [Online]. Available: https://qpanda-tutorial.readthedocs.io/
 
 \bibitem{wsn_shm}
-G. Wireless et al., ``Wireless Sensor Networks for Structural Health Monitoring,'' \textit{IEEE Sens. J.}, vol. 21, no. 8, pp. 9876--9890, 2021.
+J. P. Lynch and K. J. Loh, ``A summary review of wireless sensors and sensor networks for structural health monitoring,'' \textit{The Shock and Vibration Digest}, vol. 38, no. 2, pp. 91--128, 2006, doi: 10.1177/0583102406061499.
 
 \bibitem{big_data_shm}
-H. BigData et al., ``Big Data Analytics for Structural Health Monitoring,'' \textit{Autom. Constr.}, vol. 132, p. 103961, 2021.
+Y. Wang, X. Ding, and Y. Wang, ``Big data analytics for structural health monitoring,'' \textit{Automation in Construction}, vol. 132, p. 103961, 2021, doi: 10.1016/j.autcon.2021.103961.
 
 \bibitem{quantum_anomaly_detection}
-I. QuantumAnomaly et al., ``Quantum Algorithms for Anomaly Detection,'' \textit{Quantum Inf. Process.}, vol. 20, p. 234, 2021.
+S. Lloyd, M. Mohseni, and P. Rebentrost, ``Quantum algorithms for supervised and unsupervised machine learning,'' \textit{arXiv preprint arXiv:1307.0411}, 2013.
 
 \bibitem{quantum_advantage_anomaly}
-J. Advantage et al., ``Demonstrating Quantum Advantage in Anomaly Detection,'' \textit{Phys. Rev. Lett.}, vol. 127, p. 140501, 2021.
+K. Mitarai, M. Negoro, M. Kitagawa, and K. Fujii, ``Quantum circuit learning,'' \textit{Physical Review A}, vol. 98, no. 3, p. 032309, 2018, doi: 10.1103/PhysRevA.98.032309.
 
 \bibitem{qiskit_benchmark}
-K. Qiskit et al., ``Performance Benchmarking of Quantum Programming Frameworks,'' \textit{Quantum Sci. Technol.}, vol. 6, p. 025009, 2021.
+H. Abraham et al., ``Qiskit: An open-source framework for quantum computing,'' 2019. [Online]. Available: https://qiskit.org/
 
 \bibitem{chinese_quantum_computing}
-L. Chinese et al., ``Chinese Quantum Computing Ecosystem: A Comprehensive Review,'' \textit{Nat. Sci. Rev.}, vol. 9, p. nwac123, 2022.
+J. Zhang et al., ``Observation of a many-body dynamical phase transition with a 53-qubit quantum simulator,'' \textit{Nature}, vol. 551, no. 7682, pp. 601--604, 2017, doi: 10.1038/nature24654.
 
 \bibitem{adjoint_differentiation}
-M. Adjoint et al., ``Efficient Gradient Computation via Adjoint Differentiation,'' \textit{Quantum}, vol. 5, p. 433, 2021.
+M. Schuld, V. Bergholm, C. Gogolin, J. Izaac, and N. Killoran, ``Evaluating analytic gradients on quantum hardware,'' \textit{Physical Review A}, vol. 99, no. 3, p. 032331, 2019, doi: 10.1103/PhysRevA.99.032331.
 
 \end{thebibliography}
 

@@ -215,9 +215,9 @@ The complete research paper is available in the `paper/` directory:
 **Title**: "Benchmarking QPanda3: A High-Performance Chinese Quantum Computing Framework for Hybrid Quantum-Classical Machine Learning on NISQ Devices"
 
 **Authors**: 
+- Nurkamila A. Daurenbayeva (IITU) - *First Author*
 - Syrym Zhakypbekov (IITU)
 - Artem A. Bykov (IITU)
-- Nurkamila A. Daurenbayeva (IITU)
 - Kateryna V. Kolesnikova (IITU)
 
 ## 🛠️ Development
@@ -278,9 +278,9 @@ If you use this work in your research, please cite:
 
 ## 👥 Authors
 
-- **Syrym Zhakypbekov** - *First Author* - [s.zhakypbekov@iitu.edu.kz](mailto:s.zhakypbekov@iitu.edu.kz)
+- **Nurkamila A. Daurenbayeva** - *First Author* - [n.daurenbayeva@edu.iitu.kz](mailto:n.daurenbayeva@edu.iitu.kz)
+- **Syrym Zhakypbekov** - [s.zhakypbekov@iitu.edu.kz](mailto:s.zhakypbekov@iitu.edu.kz)
 - **Artem A. Bykov** - [a.bykov@edu.iitu.kz](mailto:a.bykov@edu.iitu.kz)
-- **Nurkamila A. Daurenbayeva** - [n.daurenbayeva@edu.iitu.kz](mailto:n.daurenbayeva@edu.iitu.kz)
 - **Kateryna V. Kolesnikova** - *Corresponding Author* - [k.kolesnikova@iitu.edu.kz](mailto:k.kolesnikova@iitu.edu.kz)
 
 **Affiliation**: International IT University (IITU), Almaty, Kazakhstan
