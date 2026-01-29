@@ -297,7 +297,7 @@ The repository includes:
 
 Detailed methodology and reproducibility instructions:
 - `docs/METHODOLOGY.md` - Complete experimental methodology
-- `docs/REFERENCES.md` - Reference guidelines (no hallucination)
+- `docs/REPRODUCIBILITY.md` - Step-by-step reproduction guide
 - `docs/CITATIONS_ADDED.md` - Citation documentation
 - `docs/FIGURES_IN_PAPER.md` - Figure verification
 
